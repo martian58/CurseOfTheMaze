@@ -16,17 +16,17 @@
 ```
 CurseOfTheMaze/
 │
-├── assets/                # Place your .png files for game assets here
+├── assets/  
 │   ├── chest.png
 │   ├── door.png
 │   ├── key.png
 │   ├── crowbar.png
 │   ├── player.png
 │   ├── monster.png
-│   └── ... (add your images)
+│ 
 │
 ├── src/                   # Java source code
-│   ├── Activatable.java
+│  
 │   ├── Chest.java
 │   ├── Crowbar.java
 │   ├── Door.java
@@ -48,11 +48,8 @@ CurseOfTheMaze/
 
 ## How to Run
 
-1. Place all your asset images in the `assets/` folder.
-2. Compile and run using the provided script:
-   ```bash
-   bash build.sh
-   ```
+```bash
+```
 
 ## OOP Principles Used
 
@@ -61,16 +58,7 @@ CurseOfTheMaze/
 - **Polymorphism**: Interfaces for `Activatable` and `Executable` allow for dynamic interactions.
 - **Composition**: Entities are composed of other objects (e.g., Room has Doors, Chests contain Items).
 
-## Expandability
 
-The design allows easy extension:
-- Add new items by extending the `Item` class.
-- Add new behaviors by implementing `Executable` or `Activatable`.
 
-## (Optional) UML Class Diagram
-
-You may use a tool like draw.io to visualize the class diagram based on the structure.
-
----
 
 Enjoy your adventure in the **CurseOfTheMaze**!

@@ -3,12 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CurseOfTheMaze extends JFrame {
     MazePanel panel;
-    private Map<Character, GameObject> objectMap = new HashMap<>();
 
     public CurseOfTheMaze() {
         setTitle("Curse Of The Maze");
@@ -18,12 +15,22 @@ public class CurseOfTheMaze extends JFrame {
         panel = new MazePanel();
         add(panel, BorderLayout.CENTER);
 
-        objectMap.put('K', new Key());
-        objectMap.put('C', new Chest());
-        objectMap.put('D', new Door());
-        objectMap.put('M', new Monster1());
-        objectMap.put('B', new Monster2());
+        // Initialize objectMap and place unique objects in each cell
+        int rows = MazeData.maze.length;
+        int cols = MazeData.maze[0].length;
+        MazeData.objectMap = new GameObject[rows][cols];
 
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                switch (MazeData.maze[i][j]) {
+                    case 'K': MazeData.objectMap[i][j] = new Key(); break;
+                    case 'C': MazeData.objectMap[i][j] = new Chest(); break;
+                    case 'D': MazeData.objectMap[i][j] = new Door(); break;
+                    case 'M': MazeData.objectMap[i][j] = new Monster1(); break;
+                    case 'B': MazeData.objectMap[i][j] = new Monster2(); break;
+                }
+            }
+        }
 
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
@@ -57,7 +64,7 @@ public class CurseOfTheMaze extends JFrame {
                     System.exit(0);
                 }
 
-                GameObject obj = objectMap.get(targetCell);
+                GameObject obj = MazeData.objectMap[newX][newY];
                 boolean canMove = true;
 
                 if (obj != null) {
