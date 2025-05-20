@@ -4,10 +4,11 @@ import javax.swing.*;
 import java.util.Random;
 
 public class Chest implements GameObject {
+    private static int nextId = 1;
     private final int id;
 
     public Chest() {
-        this.id = new Random().nextInt(10) + 1;
+        this.id = nextId++;
     }
 
     public int getId() {
@@ -17,7 +18,6 @@ public class Chest implements GameObject {
     @Override
     public boolean onPlayerInteract(int x, int y) {
         if (MazeData.keys.contains(id)) {
-            MazeData.keys.remove((Integer) id);
             int keysFound = new Random().nextInt(3) + 1;
             for (int i = 0; i < keysFound; i++)
                 MazeData.keys.add(new Random().nextInt(10) + 1);

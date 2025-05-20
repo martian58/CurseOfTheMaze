@@ -2,10 +2,11 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Key implements GameObject {
+    private static int nextId = 1;
     private final int id;
 
     public Key() {
-        this.id = new Random().nextInt(10) + 1;
+        this.id = nextId++;
     }
 
     public int getId() {
