@@ -24,8 +24,7 @@ public class MazeData {
         {'#','.','#','#','#','#','#','#','.','#','#','#','#','#','#','#','#','#','.','#'},
         {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'}
     };
-
-    public static GameObject[][] objectMap; // ← Changed to 2D array
+    public static GameObject[][] objectMap;
     public static int playerX = 1, playerY = 1;
     public static int health = 100;
     public static List<Integer> keys = new ArrayList<>();
@@ -47,22 +46,5 @@ public class MazeData {
         if (maze[x][y] == 'M') return "M1";
         if (maze[x][y] == 'B') return "M2";
         return "";
-    }
-
-    // ✅ NEW: Create individual GameObject per cell
-    public static void initializeObjectMap() {
-        objectMap = new GameObject[maze.length][maze[0].length];
-        for (int i = 0; i < maze.length; i++) {
-            for (int j = 0; j < maze[0].length; j++) {
-                char cell = maze[i][j];
-                switch (cell) {
-                    case 'K': objectMap[i][j] = new Key(); break;
-                    case 'C': objectMap[i][j] = new Chest(); break;
-                    case 'D': objectMap[i][j] = new Door(); break;
-                    case 'M': objectMap[i][j] = new Monster1(); break;
-                    case 'B': objectMap[i][j] = new Monster2(); break;
-                }
-            }
-        }
     }
 }

@@ -14,32 +14,32 @@ public class MazePanel extends JPanel {
 
     public MazePanel() {
         try {
-            playerImage = ImageIO.read(getClass().getResource("/player.jpg"));
+            playerImage = ImageIO.read(getClass().getResource("/assets/player.jpg"));
         } catch (IOException | IllegalArgumentException e) {
             playerImage = null;
         }
         try {
-            keyImage = ImageIO.read(getClass().getResource("/key.png"));
+            keyImage = ImageIO.read(getClass().getResource("/assets/key.png"));
         } catch (IOException | IllegalArgumentException e) {
             keyImage = null;
         }
         try {
-            chestImage = ImageIO.read(getClass().getResource("/chest.jpg"));
+            chestImage = ImageIO.read(getClass().getResource("/assets/chest.jpg"));
         } catch (IOException | IllegalArgumentException e) {
             chestImage = null;
         }
         try {
-            monster1Image = ImageIO.read(getClass().getResource("/monster1.png"));
+            monster1Image = ImageIO.read(getClass().getResource("/assets/monster1.png"));
         } catch (IOException | IllegalArgumentException e) {
             monster1Image = null;
         }
         try {
-            monster2Image = ImageIO.read(getClass().getResource("/monster2.png"));
+            monster2Image = ImageIO.read(getClass().getResource("/assets/monster2.png"));
         } catch (IOException | IllegalArgumentException e) {
             monster2Image = null;
         }
         try {
-            doorImage = ImageIO.read(getClass().getResource("/door.jpg"));
+            doorImage = ImageIO.read(getClass().getResource("/assets/door.jpg"));
         } catch (IOException | IllegalArgumentException e) {
             doorImage = null;
         }

@@ -1,17 +1,17 @@
-// LabyrinthGameGUI.java
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LabyrinthGameGUI extends JFrame {
+public class CurseOfTheMaze extends JFrame {
     MazePanel panel;
     private Map<Character, GameObject> objectMap = new HashMap<>();
 
-    public LabyrinthGameGUI() {
-        setTitle("Labyrinth Game");
+    public CurseOfTheMaze() {
+        setTitle("Curse Of The Maze");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -79,6 +79,6 @@ public class LabyrinthGameGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(LabyrinthGameGUI::new);
+        SwingUtilities.invokeLater(CurseOfTheMaze::new);
     }
 }
