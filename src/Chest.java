@@ -1,6 +1,4 @@
-
 import javax.swing.*;
-
 import java.util.Random;
 
 public class Chest implements GameObject {
